@@ -84,6 +84,16 @@ export class UsuariosArmazenados{
                 status: false
             };
         }
+
+    }
+    async removeUsuario(id: string){
+        const usuario = this.pesquisaId(id);
+
+        this.#usuarios = this.#usuarios.filter(
+                            usuarioSalvo => usuarioSalvo.id !== id
+                            )
+
+        return usuario
     }
 
     
